@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.body{
+    font-size: 15px;
+    font-family: 'Roboto Mono', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+.nav-bar,
+.main{
+width: 80%;
+padding: 2.5em;
+}
+.nav-bar{
+    text-align: center;
+    background-color: brown;
+}
+.nav-ul{
+    background-color: burlywood;
+    list-style: none;
+    padding: 0;
+}
+.nav-link{
+    /* text-decoration: none; */
+}
+.nav-li{
+    font-size: 1.2em;
+    margin: 0.7rem;
+    background-color: gray;
+}
+.main{
+    background-color: rgb(17, 17, 133);
+    /* width: 80%; */
+}
+
+@media (min-width:768px) {
+    
+}

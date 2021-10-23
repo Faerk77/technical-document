@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>technical-documentation | freecodecamp</title>
+</head>
+<body class="body">
+        <nav class="nav-bar" id="navbar">
+            <header>
+                <h1 id="nav-title">Android TV BOX.</h1>
+                <p class="nav-p">Redefine keys - Remote Controller.</p>
+            </header>
+            <ul class="nav-ul">
+                <li class="nav-li"><a href="#Introduction" class="nav-link">Introduction</a></li>
+                <li class="nav-li"><a href="#Editing_*.kl_files" class="nav-link">Editing *.kl files</a></li>
+                <li class="nav-li"><a href="#List_all_connected_input_devices" class="nav-link">List all connected input devices</a></li>
+                <li class="nav-li"><a href="#Overview_of_all_Android_Key_Codes" class="nav-link">Overview of all Android Key Codes</a></li>
+                <li class="nav-li"><a href="#Test_your_Keys_and_find_the_Scan_Code" class="nav-link">Test your Keys and find the ScanCode</a></li>
+                <li class="nav-li"><a href="#Editing_remote.conf" class="nav-link">Editing remote.conf</a></li>
+                <li class="nav-li"><a href="#Tipps_&_Tricks" class="nav-link">Tipps & Tricks</a></li>
+            </ul>
+        </nav>
+    <main class="main" id="main-doc">
+        <section class="main-section">
+           <section id="Introduction" class="section1 main-section">
+            <header>
+                <h2>Introduction</h2>
+            </header>
+            <p>
+                First of all you can redefine the key of every input device attached and recognized by your Android device. Such input devices like a IR Remote, Bluetooth Keybord and any USB HID (wireless or cable). This means every Keyboard, Remote Controller, Mouse or Gamepad can be modified to your own needs:
+            </p>
+
+            <h3>What you need:</h3>
+                <ul>
+                    <li><span>Root access<span/>s to your device</li>
+                    <li>Root explorer(ES File Explorer)</li>
+                    <li>Terminal</li>
+                </ul>
+            <p>You can also edit/create your <span>*.kl</span>file on your computer</p>
+        </section>
+        <section id="Editing_*.kl_files" class="section2 main-section">
+            <header>
+                <h2>Editing *.kl files</h2>
+                <h3>General Infos about Android key layout files (.kl)</h3>
+            </header>
+            <p>Key layout files are located by USB vendor, product (and optionally version) id or by input device name. The following paths are consulted in order:</p>
+            <ul>
+                <li class="kl-section">/system/usr/keylayout/Vendor_XXXX_Product_XXXX_Version_XXXX.kl</li>
+                <li class="kl-section">/system/usr/keylayout/Vendor_XXXX_Product_XXXX.kl</li>
+                <li class="kl-section">/system/usr/keylayout/DEVICE_NAME.kl</li>
+                <li class="kl-section">/data/system/devices/keylayout/Vendor_XXXX_Product_XXXX.kl</li>
+                <li class="kl-section">/data/system/devices/keylayout/DEVICE_NAME.kl</li>
+                <li class="kl-section">/system/usr/keylayout/Generic.kl</li>
+                <li class="kl-section">/data/system/devices/keylayout/Generic.kl</li>
+                <li class="kl-section">/data/system/devices/keylayout/Vendor_XXXX_Product_XXXX.kl</li>
+            </ul>
+
+            <p>When constructing a file path that contains the device name, all characters in the device name other than '0'-'9', 'a'-'z', 'A'-'Z', '-' or '_' are replaced by '_'.</p>
+        </section>
+        <section id="List_all_connected_input_devices" class="section3 main-section">
+            <header>
+                <h2>List all connected input devices</h2>
+            </header>
+            <p>Use the following command at a Terminal Emulator or via the Android Debug Bridge (ADB), to find your keyboard in the list and to get the Vendor ID, Product ID, Version ID or Device Name.</p>
+            <code>
+                cat /proc/bus/input/devices
+            </code>
+
+            <p>A good Android Terminal tool with large font size (to read on a TV screen)
+            https://play.google.com/store/apps/d...rminalemulator</p>
+
+            <p>You can use also Gamepad tester to do so. Just press the key on the remote you want to mod and it will show you all the needed informations about the Vendor ID, Product ID, Version ID or Device Name at the bottom of the screen.</p>
+        </section>
+        <section id="Overview_of_all_Android_Key_Codes" class="section4 main-section">
+            <header>
+                <h2>Overview of all Android Key Codes</h2>
+            </header>
+            <p>At the following link you will find a overview of all possible Android key codes, that can be mapped to any ScanCode of your remote control, keybord or game controller in your key layout file.
+            Note: When using a the key codes you don't have to use the beginning KEYCODE_ at your key layout file. Example:</p>
+
+            <code>
+                KEYCODE_APP_SWITCH = APP_SWITCH
+            </code>
+            <p>
+                List of all key codes >> <a href="http://developer.android.com/reference/android/view/KeyEvent.html"> Here</a>    
+            </p>
+        </section>
+    </main>
+    
+</body>
+</html>
