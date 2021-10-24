@@ -1,44 +1,67 @@
 *{
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 
 .body{
-    font-size: 15px;
-    font-family: 'Roboto Mono', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: aqua;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin: 0;
 }
-.nav-bar,
-.main{
-width: 80%;
-padding: 2.5em;
+code{
+    display: inline-block;
+    background-color: rgba(192, 189, 190, 0.239);
+    padding: 0.6em;
+    margin: 0.8rem ;
+}
+span{
+    color: rgb(255, 0, 0);
+    font-weight: 700;
 }
 .nav-bar{
+    font-size: 1em;
     text-align: center;
-    background-color: brown;
 }
-.nav-ul{
-    background-color: burlywood;
+.nav-bar header{
+    font-size: 1.5em;
+}
+.nav-bar ul{
     list-style: none;
     padding: 0;
 }
-.nav-link{
-    /* text-decoration: none; */
+.nav-bar li{
+    margin: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    background: rgba(128, 128, 128, 0.061);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.089);
 }
-.nav-li{
-    font-size: 1.2em;
-    margin: 0.7rem;
-    background-color: gray;
+.nav-link{
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.671);
+    text-decoration: none;
 }
 .main{
-    background-color: rgb(17, 17, 133);
-    /* width: 80%; */
+    font-size: 1.1em;
+    padding: 0.6rem;
+    width: 900px;
+    max-width: 100%;
+}
+.kl-section{
+    font-size: 0.9em;
+    overflow-wrap: break-word;
 }
 
-@media (min-width:768px) {
-    
+.main-test img{
+    max-width: 100%;
+    display: inline-block;
+    margin: 0.7rem auto;
 }
+
+
+
+
+

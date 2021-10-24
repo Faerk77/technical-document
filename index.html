@@ -13,42 +13,41 @@
 <body class="body">
         <nav class="nav-bar" id="navbar">
             <header>
-                <h1 id="nav-title">Android TV BOX.</h1>
+                <h1 class="header_nav-title" id="nav-title">Android TV BOX.</h1>
                 <p class="nav-p">Redefine keys - Remote Controller.</p>
             </header>
             <ul class="nav-ul">
                 <li class="nav-li"><a href="#Introduction" class="nav-link">Introduction</a></li>
-                <li class="nav-li"><a href="#Editing_*.kl_files" class="nav-link">Editing *.kl files</a></li>
+                <li class="nav-li"><a href="#Editing_kl_files" class="nav-link">Editing kl files</a></li>
                 <li class="nav-li"><a href="#List_all_connected_input_devices" class="nav-link">List all connected input devices</a></li>
                 <li class="nav-li"><a href="#Overview_of_all_Android_Key_Codes" class="nav-link">Overview of all Android Key Codes</a></li>
-                <li class="nav-li"><a href="#Test_your_Keys_and_find_the_Scan_Code" class="nav-link">Test your Keys and find the ScanCode</a></li>
+                <li class="nav-li"><a href="#Test_your_Keys_and_find_the_ScanCode" class="nav-link">Test your Keys and find the ScanCode</a></li>
                 <li class="nav-li"><a href="#Editing_remote.conf" class="nav-link">Editing remote.conf</a></li>
                 <li class="nav-li"><a href="#Tipps_&_Tricks" class="nav-link">Tipps & Tricks</a></li>
             </ul>
         </nav>
     <main class="main" id="main-doc">
-        <section class="main-section">
-           <section id="Introduction" class="section1 main-section">
-            <header>
-                <h2>Introduction</h2>
-            </header>
-            <p>
-                First of all you can redefine the key of every input device attached and recognized by your Android device. Such input devices like a IR Remote, Bluetooth Keybord and any USB HID (wireless or cable). This means every Keyboard, Remote Controller, Mouse or Gamepad can be modified to your own needs:
-            </p>
-
-            <h3>What you need:</h3>
+        <section id="Introduction" class="main-intro main-section">
+                <header>
+                    <h2>Introduction</h2>
+                </header>
+                <p>
+                    First of all you can redefine the key of every input device attached and recognized by your Android device. Such input devices like a IR Remote, Bluetooth Keybord and any USB HID (wireless or cable). This means every Keyboard, Remote Controller, Mouse or Gamepad can be modified to your own needs:
+                </p>
+                
+                <h3>What you need:</h3>
                 <ul>
-                    <li><span>Root access<span/>s to your device</li>
+                    <li><span>Root access</span> to your device</li>
                     <li>Root explorer(ES File Explorer)</li>
                     <li>Terminal</li>
                 </ul>
-            <p>You can also edit/create your <span>*.kl</span>file on your computer</p>
+                <p>You can also edit/create your <span>*.kl</span> file on your computer</p>
         </section>
-        <section id="Editing_*.kl_files" class="section2 main-section">
+        <section id="Editing_kl_files" class="main-edit main-section">
             <header>
-                <h2>Editing *.kl files</h2>
-                <h3>General Infos about Android key layout files (.kl)</h3>
+                <h2>Editing kl files</h2>
             </header>
+            <h3>General Infos about Android key layout files (.kl)</h3>
             <p>Key layout files are located by USB vendor, product (and optionally version) id or by input device name. The following paths are consulted in order:</p>
             <ul>
                 <li class="kl-section">/system/usr/keylayout/Vendor_XXXX_Product_XXXX_Version_XXXX.kl</li>
@@ -63,7 +62,8 @@
 
             <p>When constructing a file path that contains the device name, all characters in the device name other than '0'-'9', 'a'-'z', 'A'-'Z', '-' or '_' are replaced by '_'.</p>
         </section>
-        <section id="List_all_connected_input_devices" class="section3 main-section">
+
+        <section id="List_all_connected_input_devices" class="main-devices main-section">
             <header>
                 <h2>List all connected input devices</h2>
             </header>
@@ -71,13 +71,10 @@
             <code>
                 cat /proc/bus/input/devices
             </code>
-
-            <p>A good Android Terminal tool with large font size (to read on a TV screen)
-            https://play.google.com/store/apps/d...rminalemulator</p>
-
+            <p>A good Android Terminal tool with large font size (to read on a TV screen) <a href="https://play.google.com/store/apps/details?id=com.acr.shellterminalemulator">Shell Terminal Emulator</a></p>    
             <p>You can use also Gamepad tester to do so. Just press the key on the remote you want to mod and it will show you all the needed informations about the Vendor ID, Product ID, Version ID or Device Name at the bottom of the screen.</p>
         </section>
-        <section id="Overview_of_all_Android_Key_Codes" class="section4 main-section">
+        <section id="Overview_of_all_Android_Key_Codes" class="main-overview main-section">
             <header>
                 <h2>Overview of all Android Key Codes</h2>
             </header>
@@ -88,8 +85,90 @@
                 KEYCODE_APP_SWITCH = APP_SWITCH
             </code>
             <p>
-                List of all key codes >> <a href="http://developer.android.com/reference/android/view/KeyEvent.html"> Here</a>    
+                List of all key codes >> <a target="_blank" href="http://developer.android.com/reference/android/view/KeyEvent.html"> Here</a>    
             </p>
+        </section>
+        <section id="Test_your_Keys_and_find_the_ScanCode" class="main-test main-section">
+            <header>
+                <h2>Test your Keys and find the ScanCode</h2>
+            </header>
+            <p>
+                To check the already set ScanCode of any key, you can use <a href="">Multilanguage Keymap Redefiner (MKR)</a> or <a href="">Gamepad tester</a>. (see pictures for more details)
+            </p>
+            <p>
+                With Gamepad tester you can also create your device own <span> *.kl</span> dummy file for any keyboard or remote controller, straight saved to the right folder. And for sure, this file must be enhanced manually to your needs. But for a Gamepad it can create already the final *.kl file for your Gamepad, so you do not need any other tool (steps).
+            </p>
+
+            <h3>MKR</h3>
+            <img src="https://forum.freaktab.com/filedata/fetch?id=639434&d=1491150282" alt="MKR open settings">
+            <img src="https://forum.freaktab.com/filedata/fetch?id=639435&d=1491150304" alt="MKR Key test">
+            <img src="https://forum.freaktab.com/filedata/fetch?id=639436&d=1491150369" alt="MKR Scancode">
+            <h3>Gamepad tester</h3>
+            <img src="https://forum.freaktab.com/filedata/fetch?id=639437&d=1491150410" alt="GamePad Vender/product id file">
+            <img src="https://forum.freaktab.com/filedata/fetch?id=639438&d=1491150447" alt="GamePad Vendor_XXXX_Product_XXXX_Version_XXXX">
+        </section>
+        <section id="Editing_remote.conf" class="main-remote main-section">
+            <header><h2>Editing remote.conf</h2></header>
+            <p>With the following described enhanced modifications you can easily add any IR Remote Controler to also work with your android device. It helps you also in case some keys of your IR Remote aren't working (not set).</p>
+            <p><span>Note:</span> A full description on how to generate your own remote.conf file for any other IR Remote Controler can be found already <a target="_blank" href="http://freaktab.com/forum/tv-player-support/amlogic-based-tv-players/aml872mx/tronsmart-ab/firmware-roms-tools-ab/9997-prometheus-universal-remote-setup-for-any-amlogic-board-with-ir">here</a> </p>
+            <p>The remote.conf file to modify can be found her: <span>system/etc/remote.conf</span>
+                Right now we will check only how to add the non working (not set) keys to our needs.</p>
+            
+            <p>First we have to <span>check if debug is enabled</span> in your <span>remote.conf</span> file. Because without this setting we will see nothing whats going on/wrong.</p>
+            <code>
+                debug_enable = 1
+            </code>
+            <p>
+                If it is set to 0, change it to 1 and reboot your device.
+            </p>
+
+            <p>
+                Now open a Terminal session and enter the following commands
+            </p>
+            <code>
+                su
+            </code>
+            <p>to get root access</p>
+            <code>
+                dmesg -c
+            </code>
+            <p>to clean all debug messages</p>
+            <p>Now click that key on your remote control that does not even work when testing it with MKR or Gamepad tester</p>
+            <code>
+                dmesg|grep "code is 0x"
+            </code>
+            <p>To see only those messages on keys who are not set to our remote.conf file</p>
+            <p>You will see right now a masse like this:</p>
+            <code>
+                Wrong custom code is 0xaa<span>bb</span>cccc
+            </code>
+            <p>So our needed ScanCode to set at remote.conf is: <span>bb</span></p>
+            <p>Now we can set the right ScanCode to our remote.conf and *.kl files like this.</p>
+
+            <h3>remote.conf</h3>
+            <code>
+                0xbb123
+            </code>
+            <h3>Vendor_XXXX_Product_XXXX.kl</h3>
+            <code>key 123 DPAD_UP</code>
+            <p>So <span>0xbb</span> is the key we press on our remote and <span>123</span> is the ScanCode to this key and it is set to in our *.kl file as DPAD_UP</p>
+        </section>
+        <section id="Tipps_&_Tricks" class="main-tipps main-section">
+            <header>
+                <h2>Tipps & Tricks</h2>
+            </header>
+            <p>While your are generating your own configurations file I should finally also mention the follwing tipps & tricks I made.</p>
+            <h3>Android Key Layout files (*.kl)</h3>
+            <h4>The one file who fits them all (Generic.kl)</h4>
+            <p>There are always already a lot of Key Layout files included to you Android. The most important is the Generic.kl file. Because this file is always used in case there is no other specific file, created only to mach to one specific device. So in case there is no kl file that match to your device Vendor & Device ID or device name, Android will always use the Generic.kl file. <span>So it is not a good idea to change anything to the Generic.kl</span>. Because this could mess up the function of other input devices, that have also no own *.kl file. So it is always better to create a specific key file for each individual input device.</p>
+            <h4>Error solving while creating your own *kl file</h4>
+            <p>Sometimes while creating your own key layout files, things do not work as they should. In those cases it is good to now what causes the issue. One of my best practice to check if the issue comes from your own created file or not, is to move all already existing *.kl to a sub folder. So the system has only the one file you created. But keep in mind that now no other input device will work anymore until you copy them back to it original folder. And you should always have a mouse attached to your Android device. Becasue this will be the only device that works without any *.kl file.</p>
+            <h3>General tipps while editing</h3>
+            <p>Keep always a copy of the original configurations file as reference, by just renaming the original file like this:</p>
+            <ul>
+                <li>remote.conf >> remote.conf_</li>
+                <li>Generic.kl >> Generic.kl_</li>
+            </ul>
         </section>
     </main>
     
