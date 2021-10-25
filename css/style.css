@@ -2,13 +2,14 @@
     box-sizing: border-box; 
 }
 
-
 .body{
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
    margin: 0;
+   width: 100vw;
+   max-width: 100vw;
 }
 code{
     display: inline-block;
@@ -31,14 +32,21 @@ span{
     list-style: none;
     padding: 0;
 }
-.nav-bar li{
+/* .nav-bar li{
     margin: 0.9rem;
     padding: 0.5rem;
     border-radius: 0.3rem;
     background: rgba(128, 128, 128, 0.061);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.089);
-}
+} */
 .nav-link{
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.3rem;
+    background: rgba(128, 128, 128, 0.061);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.089);
     text-transform: uppercase;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.671);
@@ -47,7 +55,7 @@ span{
 .main{
     font-size: 1.1em;
     padding: 0.6rem;
-    width: 900px;
+    /* width: 900px; */
     max-width: 100%;
 }
 .kl-section{
@@ -56,11 +64,35 @@ span{
 }
 
 .main-test img{
-    max-width: 100%;
+    width: 100%;
     display: inline-block;
     margin: 0.7rem auto;
 }
 
+@media (min-width:800px){
+.body{
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+.main{
+    overflow: auto;
+    max-width: 70%;
+}
+.nav-bar{
+    margin: 0 1rem;
+    position: sticky;
+    top: 0;
+}
+.nav-link{
+    padding: 0.7em;
+    margin-bottom: 1.5rem;
+}
+.nav-link:hover{
+    color: white;
+    background-color: rgba(24, 22, 22, 0.746);
+}
+}
 
 
 
