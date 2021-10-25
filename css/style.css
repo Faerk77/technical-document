@@ -32,17 +32,11 @@ span{
     list-style: none;
     padding: 0;
 }
-/* .nav-bar li{
-    margin: 0.9rem;
-    padding: 0.5rem;
-    border-radius: 0.3rem;
-    background: rgba(128, 128, 128, 0.061);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.089);
-} */
 .nav-link{
     display: inline-block;
     margin: 0.5rem;
     padding: 0.5rem;
+    max-width: 350px;
     width: 100%;
     border-radius: 0.3rem;
     background: rgba(128, 128, 128, 0.061);
@@ -62,9 +56,9 @@ span{
     font-size: 0.9em;
     overflow-wrap: break-word;
 }
-
 .main-test img{
-    width: 100%;
+    width: 900px;
+    max-width: 100%;
     display: inline-block;
     margin: 0.7rem auto;
 }
